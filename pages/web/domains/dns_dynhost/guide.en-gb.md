@@ -51,7 +51,11 @@ Once you have filled in all of the required fields, click `Confirm`{.action}. Th
 
 This second step involves creating the DNS record that must be updated dynamically. As a reminder, it must not already exist in your domain name’s OVH DNS zone as an A record. For advice on how to check this and delete the A record if necessary, please read our guide to [Editing an OVH DNS zone](https://docs.ovh.com/gb/en/domains/web_hosting_how_to_edit_my_dns_zone/){.external}.
 
+<<<<<<< HEAD
 Once you are ready to create the DynHost record, go to the `DynHost`{.action} tab, then click `Add a DynHost`{.action}. In the pop-up window, enter the following information:
+=======
+- Click on "Login" to confirm.
+>>>>>>> FR_update_plugin-ovh-network
 
 |Information|Description|
 |---|---|
@@ -88,4 +92,83 @@ To check that the target IP address has been updated, go to the `DynHost`{.actio
 
 ## Go further
 
+<<<<<<< HEAD
 Join our community of users on <https://community.ovh.com/en/>.
+=======
+
+![](images/img_3458.jpg){.thumbnail}
+Then click on "Create an identifier".
+
+![](images/img_3459.jpg){.thumbnail}
+
+- Enter the information requested:
+
+- The login suffix
+- Sub-domain
+- Password
+
+
+Then click "Confirm".
+
+![](images/img_3461.jpg){.thumbnail}
+Then you can view the account that you have just created, as well as the associated sub-domain.
+
+- Then click the back button.
+
+
+
+![](images/img_3463.jpg){.thumbnail}
+
+
+## Creating a DynHost
+Click on "Add a DynHost".
+
+![](images/img_3464.jpg){.thumbnail}
+Enter:
+
+- The sub-domain
+- The the current destination IP
+- Then click "Confirm".
+
+
+
+![](images/img_3465.jpg){.thumbnail}
+Please note:
+
+- It will take 24 hours to create this record
+
+
+
+- You can then see that your DynHost and sub-domain and its IP has been created.
+
+
+
+![](images/img_3470.jpg){.thumbnail}
+Please note:
+
+- The A record will automatically be created in your DNS zone. You therefore do not need to creare it before or after your DynHost.
+
+
+
+
+## Bali Dynamic DNS (Free)
+
+- In  Bali Dynamic DNS, enter the requested fields in green, then click on "Update IP in database if necessary".
+
+
+
+![](images/img_3477.jpg){.thumbnail}
+The status "IP changed" will be displayed, which means that your IP has been updated.
+
+![](images/img_3478.jpg){.thumbnail}
+
+
+## Direct Update (Shareware)
+
+- In Direct Update, you just have to enter the fields in vert and don't forget to untick the "Disable/ignore this account" box.
+
+
+
+![](images/img_3480.jpg){.thumbnail}
+
+>>>>>>> FR_update_plugin-ovh-network

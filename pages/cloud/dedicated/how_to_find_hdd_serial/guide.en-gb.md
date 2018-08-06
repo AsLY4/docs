@@ -5,7 +5,11 @@ excerpt: 'This guide will show you how to retrieve the serial number of a disk i
 section: 'Server Management'
 ---
 
+<<<<<<< HEAD
 **Last update 20th July 2018**
+=======
+**Last update 6th June 2018**
+>>>>>>> FR_update_plugin-ovh-network
 
 ## Objective
 
@@ -15,9 +19,14 @@ To minimise the chance of human error during hard disk replacements, we ask our 
 
 ## Requirements
 
+<<<<<<< HEAD
 - a [dedicated server](https://www.ovh.co.uk/dedicated_servers/){.external}
 - administrative (root) access to the server via SSH
 - the sas2ircu utility installed on your Windows server (available via the [broadcom](https://www.broadcom.com/support/download-search/?dk=sas2ircu){.external} search engine).
+=======
+- You need to have root access in SSH to your [dedicated server](https://www.ovh.co.uk/dedicated_servers/){.external}
+- You need to have the sas2ircu utility installed on your Windows server (available via the [broadcom](https://www.broadcom.com/support/download-search/?dk=sas2ircu){.external} search engine).
+>>>>>>> FR_update_plugin-ovh-network
 
 ## Instructions
 

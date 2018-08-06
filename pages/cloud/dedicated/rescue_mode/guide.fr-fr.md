@@ -5,7 +5,11 @@ excerpt: 'Comment activer et utiliser le mode rescue sur un serveur dédié'
 section: 'Diagnostic et mode Rescue'
 ---
 
+<<<<<<< HEAD
 **Dernière mise à jour le 11/07/2018**
+=======
+**Dernière mise à jour le 20/06/2018**
+>>>>>>> FR_update_plugin-ovh-network
 
 ## Objectif
 
@@ -52,12 +56,15 @@ Après le redémarrage de votre serveur, vous recevrez un e-mail avec vos inform
 
 #### Utiliser le SSH (lignes de commande)
 
+<<<<<<< HEAD
 
 > [!primary]
 > 
 > En cas d'utilisation d'une clé SSH (active également dans votre espace client OVH), aucun mot de passe ne vous sera envoyé. Une fois le serveur en mode Rescue vous pourrez vous connectez directement avec votre clé SSH).
 >
 
+=======
+>>>>>>> FR_update_plugin-ovh-network
 Après le redémarrage de votre serveur, vous recevrez un e-mail avec vos informations d'accès en mode rescue. Vous devrez alors accéder à votre serveur via les lignes de commande habituelles, mais en utilisant le mot de passe root du mode rescue au lieu du vôtre.
 
 Par exemple :

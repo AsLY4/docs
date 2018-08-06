@@ -48,8 +48,16 @@ In the configuration file, you need to add an host, like this:
   database = "telegraf" # required.
 ```
 
+<<<<<<< HEAD
 Replace `WRITE_TOKEN` and `REGION` by your own information based on Metrics manager. Telegraf is now configured!
 
 ## Going further
 
 You can exchange with our community of users on [https://community.ovh.com](https://community.ovh.com){.external}.
+=======
+Replace `WRITE_TOKEN` and `REGION` by your own information based on Metrics manager. Scollector is now configured!
+
+## Going further
+
+You can exchange with our community of users on [https://community.ovh.com](https://community.ovh.com){.external}.
+>>>>>>> FR_update_plugin-ovh-network

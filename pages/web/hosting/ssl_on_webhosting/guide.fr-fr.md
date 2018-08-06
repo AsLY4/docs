@@ -38,6 +38,7 @@ Retrouver comment réaliser cette manipulation [ici](#IMPORT_SSL){.external}.
 ## La gestion du certificat SSL gratuit
 
 ### Activer le certificat SSL gratuit
+<<<<<<< HEAD
 Si le certificat n'est pas actif sur votre hébergement, rendez-vous sur votre espace client. Sélectionnez votre hébergement dans la partie de gauche, puis cliquez `Actions`{.action} puis sur `Commander un certificat SSL`{.action}.
 
 > [!alert]
@@ -50,6 +51,25 @@ Si le certificat n'est pas actif sur votre hébergement, rendez-vous sur votre e
 Choisissez ensuite  **Certificat gratuit (Let's encrypt)** . Puis  **Suivant** .
 
 ![hosting](images/4607-2.png){.thumbnail}
+=======
+Si le certificat n'est pas actif sur votre hébergement, rendez-vous sur votre espace client. Sélectionnez votre hébergement dans la partie de gauche, puis cliquez sur " **Commander un certificat SSL** ".
+
+> [!alert]
+>
+> Vous pouvez activer SSL Let's Encrypt sur un maximum de 100 domaines et/ou sous
+> domaines,  par hébergement .
+> 
+
+![hosting](images/4584.png){.thumbnail}
+
+Choisissez ensuite  **Certificat gratuit (Let's encrypt)** . Puis  **Suivant** .
+
+![hosting](images/4607.png){.thumbnail}
+
+"L'activation de votre hébergement avec SSL est en cours."
+
+![hosting](images/4587.png){.thumbnail}
+>>>>>>> FR_update_plugin-ovh-network
 
 Une fois le certificat généré, le protocole HTTPS est disponible sous quelques heures, le temps de le déployer sur l'ensemble de l'infrastructure.
 
@@ -61,13 +81,26 @@ Une fois le certificat généré, le protocole HTTPS est disponible sous quelque
 ### Desactiver le certificat SSL gratuit
 Si le certificat est déjà activé et que vous souhaitez le supprimer, rendez- vous sur votre espace client.
 
+<<<<<<< HEAD
 Sélectionnez votre hébergement dans la partie de gauche puis, cliquez sur `Actions`{.action} puis sur `Supprimer le SSL`{.action}. Dans la fenêtre qui apparait, validez la suppression du certificat. **Une fois le certificat supprimé, le protocole HTTPS devient indisponible sous quelques heures, le temps de le supprimer sur l'ensemble de l'infrastructure.**
 
 ![hosting](images/4593-2.png){.thumbnail}
+=======
+Sélectionnez votre hébergement dans la partie de gauche.
+
+Puis, cliquez simplement sur  **Supprimer le SSL** , puis  **Valider** .
+
+Puis, cliquez simplement sur " **Supprimer le SSL** ", puis  **Valider** . Une fois le certificat supprimé, le protocole HTTPS devient indisponible sous quelques heures, le temps de le supprimer sur l'ensemble de l'infrastructure.
+
+![hosting](images/4593.png){.thumbnail}
+
+<a name="MULTI_SITE"></a>
+>>>>>>> FR_update_plugin-ovh-network
 
 ### Gerer le certificat SSL sur vos multisites
 Toujours sur votre espace client, sélectionnez votre hébergement.
 
+<<<<<<< HEAD
 Rendez-vous ensuite dans l'onglet  **Multisite**. Dans la colonne  **SSL** du tableau, voyez s'il est  **activé**  ou  **non**  pour votre Multisite. Pour modifier cela, cliquez sur l'icône en forme de roue dentée puis sur **Modifier** .
 
 ![hosting](images/4595-2.png){.thumbnail}
@@ -75,14 +108,33 @@ Rendez-vous ensuite dans l'onglet  **Multisite**. Dans la colonne  **SSL** du ta
 Cochez simplement  **SSL**  si vous souhaitez l'activer, puis  **Suivant** . Vérifiez le résumé, puis cliquez sur  **Valider** .
 
 ![hosting](images/4599-2.png){.thumbnail}
+=======
+Rendez-vous ensuite dans l'onglet  **Multisite** .
+
+Dans la colonne  **SSL** , voyez s'il est  **activé**  ou  **non**  pour votre Multisite. Pour modifier cela, cliquez sur l'icone en forme de  **crayon** .
+
+![hosting](images/4595.png){.thumbnail}
+
+Cochez simplement  **SSL**  si vous souhaitez l'activer, puis  **Suivant** . Vérifiez le résumé, puis cliquez sur  **Valider** .
+
+![hosting](images/4599.png){.thumbnail}
+>>>>>>> FR_update_plugin-ovh-network
 
 Vous verrez ensuite le certificat dans l'état  **À générer** . Cela signifie que lors de la prochaine  **génération de certificat** , ce multisite sera pris en compte.
 
 C'est un état temporaire. De cette façon vous pouvez configurer tout vos multisites/SSL à la suite, puis regénérer votre certificat SSL afin de réduire les délais de ces changements.
 
+<<<<<<< HEAD
 Afin que le protocole HTTPS soit actif sur ce multisite, il reste à regénérer le certificat SSL. Repositionnez-vous sur l'onglet **Informations générales**, puis cliquez sur le bouton **Actions** puis sur **Regénérer le certificat SSL**. Dans la fenêtre qui apparait, validez la manipulation. Le protocole HTTPS pour ce multisite est disponible sous quelques heures, le temps de le déployer sur l'ensemble de l'infrastructure.
 
 ![hosting](images/4593-2.png){.thumbnail}
+=======
+Afin que le protocole HTTPS soit actif sur ce multisite, il reste à regénérer le certificat SSL en utilisant le bouton situé sur la droite du tableau des multisites, puis à valider le message de confirmation. Le protocole HTTPS pour ce multisite est disponible sous quelques heures, le temps de le déployer sur l'ensemble de l'infrastructure.
+
+![hosting](images/4604.png){.thumbnail}
+
+![hosting](images/4606.png){.thumbnail}
+>>>>>>> FR_update_plugin-ovh-network
 
 > [!alert]
 >
@@ -120,6 +172,7 @@ Retrouvez plus d'information à ce sujet sur [Éviter les pièges du SSL avec mo
 ### Comment faire ?
 Pour importer votre propre certificat SSL sur votre hébergement, rendez-vous sur votre [espace client](https://www.ovh.com/auth/?action=gotomanager){.external}, puis dans l'onglet "Informations générales" de votre hébergement, cliquez ensuite sur "Commander un certificat SSL".
 
+<<<<<<< HEAD
 ![hosting](images/4584-2.png){.thumbnail}
 
 Choisissez "Import de votre certificat SSL" puis cliquez sur "Suivant".
@@ -129,5 +182,16 @@ Choisissez "Import de votre certificat SSL" puis cliquez sur "Suivant".
 Renseignez le contenu de votre certificat et votre clé privée puis cliquez sur "Suivant".
 
 ![hosting](images/sslexterne-2.png){.thumbnail}
+=======
+![hosting](images/4572.png){.thumbnail}
+
+Choisissez "Import de votre certificat SSL" puis cliquez sur "Suivant".
+
+![hosting](images/4573.png){.thumbnail}
+
+Renseignez le contenu de votre certificat et votre clé privée puis cliquez sur "Suivant".
+
+![hosting](images/sslexterne.png){.thumbnail}
+>>>>>>> FR_update_plugin-ovh-network
 
 L'import de votre certification sera disponible après quelques heures maximum, le temps qu'il soit déployé sur l'ensemble de l'infrastructure.

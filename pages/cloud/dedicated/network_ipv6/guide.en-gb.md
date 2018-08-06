@@ -5,20 +5,35 @@ excerpt: 'This guide explains how to configure IPv6 addresses on our infrastruct
 section: 'Network Management'
 ---
 
+<<<<<<< HEAD
 **Last updated 20th July 2018**
 
 ## Objective
 
 Internet Protocol version 6 (IPv6) is the latest version of the Internet Protocol (IP). It is designed to address the long-anticipated address exhaustion of its predecessor, IPv4, by using 128-bit addresses instead of 32-bit addresses. Every OVH Dedicated Server comes with a /64 IPv6 block. This represents over 18 quintillion IP addresses that you can use at your convenience.
+=======
+**Last updated 26th April 2018**
+
+## Objective
+
+Internet Protocol version 6 (IPv6) is the latest version of the Internet Protocol (IP). It is designed to address the long-anticipated address exhaustion of its predecessor, IPv4, by using 128-bits addresses instead of 32-bits addresses. Every Dedicated Server comes with a /64 IPv6 block. This represents over 18 quintillion IP addresses that you can use at your convenience.
+>>>>>>> FR_update_plugin-ovh-network
 
 **This guide explains how to configure IPv6 addresses on our infrastructure.**
 
 ## Requirements
 
+<<<<<<< HEAD
 - a [Dedicated Server](https://www.ovh.co.uk/dedicated_servers/){.external}
 - [IP failover(s)](https://www.ovh.co.uk/dedicated_servers/ip_failover.xml){.external} with associated virtual MAC addresses
 - all your IPv6 information (prefix, gateway etc.)
 - a basic knowledge of [SSH](http://en.wikipedia.org/wiki/Secure_Shell) and networking
+=======
+- You need to have a [Dedicated Server](https://www.ovh.co.uk/dedicated_servers/){.external}.
+- You need to have [IP failover(s)](https://www.ovh.co.uk/dedicated_servers/ip_failover.xml){.external} with associated virtual MAC addresses.
+- You need to have all your IPv6 information (prefix / gateway...).
+- You need to have basic knowledge of [SSH](http://en.wikipedia.org/wiki/Secure_Shell) and networking.
+>>>>>>> FR_update_plugin-ovh-network
 
 ## Instructions
 
@@ -28,7 +43,11 @@ If you want to have more than one IPv6 configured on your server (or want to use
 
 > [!primary]
 >
+<<<<<<< HEAD
 > The default gateway for your IPv6 block (IPv6_GATEWAY) is always xxxx.xxxx.xxxx.xxFF:FF:FF:FF:FF. 
+=======
+> The default Gateway for your IPv6 block (IPv6_GATEWAY) is always xxxx.xxxx.xxxx.xxFF:FF:FF:FF:FF. 
+>>>>>>> FR_update_plugin-ovh-network
 >
 > For example:
 > 
@@ -40,11 +59,17 @@ If you want to have more than one IPv6 configured on your server (or want to use
 
 > [!warning]
 >
+<<<<<<< HEAD
 > Before following the steps below, we strongly suggest that you disable IPv6 autoconf and router advertising to prevent known issues. You can do so by adding the following lines to your `sysctl.conf` file, which is located in /etc/sysctl.conf:
 > 
 > `net.IPv6.conf.all.autoconf=0`
 > 
 > `net.IPv6.conf.all.accept_ra=0`
+=======
+> Before following the steps below, we strongly suggest that you disable IPv6 autoconf and router advertising to prevent known issues. You can do so by adding the following lines to your `sysctl.conf` file:
+> 
+> `bash net.IPv6.conf.eth0.autoconf=0 net.IPv6.conf.eth0.accept_ra=0`
+>>>>>>> FR_update_plugin-ovh-network
 > 
 > Once this has been done, you can apply those rules by executing the following command: `sh sysctl -p`.
 > 
@@ -61,6 +86,7 @@ Your server's network configuration file is located in `/etc/network/interfaces`
 
 #### Step 3: Amend the network configuration file
 
+<<<<<<< HEAD
 Amend the file so that it looks like the example below. In this example, the network interface is called `eth0`. The interface on your server may differ.
 
 ```sh
@@ -91,6 +117,38 @@ ping6 -c 4 2001:4860:4860::8888
 >>> 64 bytes from 2001:4860:4860::8888: icmp_seq=3 ttl=55 time=23.9 ms
 >>> 64 bytes from 2001:4860:4860::8888: icmp_seq=4 ttl=55 time=23.8 ms
 
+=======
+Amend the file so that it looks like the example below. In this example, the network interface is called `eth0:0`. The interface on your server may differ.
+
+```sh
+iface eth0:0 inet6 static 
+    address YOUR_IPv6 
+    netmask 128
+
+post-up /sbin/ip -f inet6 route add IPv6_GATEWAY dev eth0:0 
+post-up /sbin/ip -f inet6 route add default via IPv6_GATEWAY 
+pre-down /sbin/ip -f inet6 route del IPv6_GATEWAY dev eth0:0 
+pre-down /sbin/ip -f inet6 route del default via IPv6_GATEWAY
+```
+
+#### Step 4: Save the file and reboot the server
+
+Save your changes to the file and then reboot your server to apply the changes.
+
+#### Step 5: Test the IPv6 connectivity
+
+You can test IPv6 connectivity by running the commands shown below:
+
+```sh
+ping6 -c 4 2001:4860:4860::8888
+
+>>> PING 2001:4860:4860::8888(2001:4860:4860::8888) 56 data bytes
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=1 ttl=55 time=23.6 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=2 ttl=55 time=23.8 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=3 ttl=55 time=23.9 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=4 ttl=55 time=23.8 ms
+
+>>>>>>> FR_update_plugin-ovh-network
 >>> --- 2001:4860:4860::8888 ping statistics ---
 >>> 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 >>> rtt min/avg/max/mdev = 23.670/23.670/23.670/0.000 ms
@@ -103,17 +161,29 @@ If you are not able to ping this IPv6 address, check your configuration and try 
 
 > [!warning]
 >
+<<<<<<< HEAD
 > This example has been made with CentOS 7.0. Results may vary when using other Redhat derivatives.
+=======
+> This example has been made with CentOS 7.0. Results may vary when using other redhat derivatives.
+>>>>>>> FR_update_plugin-ovh-network
 >
 
 #### Step 1: Open an SSH connection to your server
 
 You can open up a connection to your server using the command line terminal if you're using a Linux operating system. If you're using a Windows PC, you can install PuTTy, which is a terminal emulator for Windows. It will allow you to connect to your server and run commands.
+<<<<<<< HEAD
 
 You can connect to your server using its IP address and your root credentials.
 
 #### Step 2: Open your server's network configuration file
 
+=======
+
+You can connect to your server using its IP address and your root credentials.
+
+#### Step 2: Open your server's network configuration file
+
+>>>>>>> FR_update_plugin-ovh-network
 Your server's network configuration file is located in /etc/sysconfig/network-scripts/ifcfg-eth0. Use the command line to locate this file and open it for editing.
 
 #### Step 3: Amend the network configuration file
@@ -135,7 +205,11 @@ Save your changes to the file and then reboot your server to apply the changes.
 
 #### Step 5: Test the IPv6 connectivity
 
+<<<<<<< HEAD
 You can test the IPv6 connectivity by running the commands shown below:
+=======
+You can test IPv6 connectivity by running the commands shown below:
+>>>>>>> FR_update_plugin-ovh-network
 
 ```sh
 ping6 -c 4 2001:4860:4860::8888
@@ -153,6 +227,7 @@ ping6 -c 4 2001:4860:4860::8888
 
 If you are not able to ping this IPv6 address, check your configuration and try again. If it still doesn't work, please test your configuration in [Rescue mode](https://docs.ovh.com/gb/en/dedicated/rescue_mode/){.external}.
 
+<<<<<<< HEAD
 ### FreeBSD
 
 #### Step 1: Open an SSH connection to your server
@@ -169,11 +244,28 @@ Your server's network configuration file is located in `/etc/rc.conf`. Use the c
 
 Amend the file so that it looks like the example below. In this example, the network interface is called eth0. The interface on your server may differ.
 
+=======
+#### Step 1: Open an SSH connection to your server
+
+You can open up a connection to your server using the command line terminal if you're using a Linux operating system. If you're using a Windows PC, you can install PuTTy, which is a terminal emulator for Windows. It will allow you to connect to your server and run commands.
+
+You can connect to your server using its IP address and your root credentials.
+
+#### Step 2: Open your server's network configuration file
+
+Your server's network configuration file is located in `/etc/rc.conf`. Use the command line to locate this file and open it for editing.
+
+#### Step 3: Amend the network configuration file
+
+Amend the file so that it looks like the example below. In this example, the network interface is called eth0. The interface on your server may differ.
+
+>>>>>>> FR_update_plugin-ovh-network
 ```sh
 IPv6_activate_all_interfaces="YES" 
 IPv6_defaultrouter="IPv6_GATEWAY" 
 ifconfig_em0_IPv6="inet6 YOUR_IPv6 prefixlen 64"
 ```
+<<<<<<< HEAD
 
 #### Step 4: Save the file and reboot the server
 
@@ -233,9 +325,33 @@ Save your changes to the file and then reboot your server to apply the changes.
 
 You can test the IPv6 connectivity by running the commands shown below:
 
+=======
+
+#### Step 4: Save the file and reboot the server
+
+Save your changes to the file and then reboot your server to apply the changes.
+
+#### Step 5: Test the IPv6 connectivity
+
+You can test IPv6 connectivity by running the commands shown below:
+
 ```
 ping6 -c 4 2001:4860:4860::8888
 
+>>> PING 2001:4860:4860::8888(2001:4860:4860::8888) 56 data bytes
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=1 ttl=55 time=23.6 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=2 ttl=55 time=23.8 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=3 ttl=55 time=23.9 ms
+>>> 64 bytes from 2001:4860:4860::8888: icmp_seq=4 ttl=55 time=23.8 ms
+
+>>> --- 2001:4860:4860::8888 ping statistics ---
+>>> 1 packets transmitted, 1 received, 0% packet loss, time 0ms
+>>> rtt min/avg/max/mdev = 23.670/23.670/23.670/0.000 ms
+>>>>>>> FR_update_plugin-ovh-network
+```
+ping6 -c 4 2001:4860:4860::8888
+
+<<<<<<< HEAD
 PING 2001:4860:4860::8888(2001:4860:4860::8888) 56 data bytes
 64 bytes from 2001:4860:4860::8888: icmp_seq=1 ttl=57 time=4.07 ms
 64 bytes from 2001:4860:4860::8888: icmp_seq=2 ttl=57 time=4.08 ms
@@ -255,6 +371,18 @@ To remotely connect to your Windows server, you'll need to establish a remote de
 
 Click `Change adapter settings`{.action}.
 
+=======
+If you are not able to ping this IPv6 address, check your configuration and try again. If it still doesn't work, please test your configuration in [Rescue mode](https://docs.ovh.com/gb/en/dedicated/rescue_mode/){.external}.
+
+### Windows Server 2012
+
+To remotely connect to your Windows server, you'll need to establish a remote desktop connection to it. First, right-click on the network icon in the notification area to go to the `Network and Sharing Center`{.action}.
+
+![Network and Sharing Center](images/ipv6_network_sharing_center.png){.thumbnail}
+
+Click `Change adapter settings`{.action}.
+
+>>>>>>> FR_update_plugin-ovh-network
 ![Change adapter settings](images/ipv6_change_adapter_settings.png){.thumbnail}
 
 Right-click your network adapter, then click `Properties`{.action}.

@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 title: 'Getting started with SSH'
+=======
+title: 'Introduction to SSH'
+>>>>>>> FR_update_plugin-ovh-network
 slug: ssh-introduction
 excerpt: 'Learn how to use the SSH service to access your server'
 section: 'Getting started'
